@@ -1,7 +1,9 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const BASE_URL = process.env.REACT_APP_API_URL || '/api';
+// const BASE_URL = process.env.REACT_APP_API_URL || '/api';
+
+const BASE_URL = 'https://intellectual-property-accessor.onrender.com';
 
 const api = axios.create({
   baseURL: BASE_URL,
