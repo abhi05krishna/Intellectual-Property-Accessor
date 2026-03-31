@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usersAPI, authAPI } from '../api/services';
 import { Card, PageHeader, Button, SectionTitle } from '../components/common';
-import { Save, Lock, Trash2, User } from 'lucide-react';
+import { Save, Lock, Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const DOMAINS = [
