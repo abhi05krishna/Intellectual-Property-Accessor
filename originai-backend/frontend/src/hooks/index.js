@@ -28,6 +28,15 @@ export const useAnalysisList = (params = {}) => {
 
 // ── useAnalysisPoller ────────────────────────────────────────
 // Submits an analysis and polls until completed/failed
+
+const STEPS = [
+  { pct: 15, label: 'Parsing document...' },
+  { pct: 32, label: 'Vectorizing with sentence-BERT...' },
+  { pct: 55, label: 'Searching vector database...' },
+  { pct: 78, label: 'Comparing 4.2M papers...' },
+  { pct: 92, label: 'Generating AI recommendations...' },
+  { pct: 100, label: 'Finalizing report...' },
+];
 export const useAnalysisPoller = () => {
   const [analysisId, setAnalysisId] = useState(null);
   const [status, setStatus] = useState(null);  // pending | processing | completed | failed
@@ -37,14 +46,7 @@ export const useAnalysisPoller = () => {
   const [submitting, setSubmitting] = useState(false);
   const intervalRef = useRef(null);
 
-  const STEPS = [
-    { pct: 15, label: 'Parsing document...' },
-    { pct: 32, label: 'Vectorizing with sentence-BERT...' },
-    { pct: 55, label: 'Searching vector database...' },
-    { pct: 78, label: 'Comparing 4.2M papers...' },
-    { pct: 92, label: 'Generating AI recommendations...' },
-    { pct: 100, label: 'Finalizing report...' },
-  ];
+  
 
   const stopPolling = useCallback(() => {
     if (intervalRef.current) {

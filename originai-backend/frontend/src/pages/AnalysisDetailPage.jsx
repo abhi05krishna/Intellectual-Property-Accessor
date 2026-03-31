@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { analysisAPI } from '../api/services';
-import { Card, ScoreRing, SectionTitle, Badge, Button, PageHeader, Skeleton } from '../components/common';
+import { Card, ScoreRing, SectionTitle, Badge, Button, Skeleton } from '../components/common';
 import { ArrowLeft, Download, ExternalLink } from 'lucide-react';
 import toast from 'react-hot-toast';
 

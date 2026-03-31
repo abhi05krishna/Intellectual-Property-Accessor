@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
-  FlaskConical, LayoutDashboard, History, FileText,
+  FlaskConical, LayoutDashboard, History, 
   Settings, LogOut, ChevronRight, BookOpen, Menu, X
 } from 'lucide-react';
 import styles from './AppLayout.module.css';

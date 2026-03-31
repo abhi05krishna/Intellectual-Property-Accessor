@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDashboard } from '../hooks';
-import { Card, PageHeader, StatCard, SectionTitle, Badge, Button, Skeleton } from '../components/common';
+import { Card, PageHeader, StatCard, SectionTitle, Button, Skeleton } from '../components/common';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import { formatDistanceToNow } from 'date-fns';
 
