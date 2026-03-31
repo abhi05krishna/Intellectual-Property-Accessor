@@ -1,0 +1,137 @@
+/* ── Google Fonts are loaded in index.html ── */
+
+:root {
+  /* Dark/Snow palette */
+  --dark:       #0D1117;
+  --dark2:      #161B22;
+  --dark3:      #21262D;
+  --dark4:      #30363D;
+  --dark5:      #3D444D;
+
+  --snow:       #E8EDF2;
+  --snow-dim:   #B8C4D0;
+  --snow-mute:  #8B949E;
+  --snow-ghost: #6E7681;
+
+  --accent:     #58A6FF;
+  --accent-dim: rgba(88, 166, 255, 0.15);
+  --accent2:    #3FB68B;
+  --accent3:    #F78166;
+  --accent4:    #D2A8FF;
+
+  --success:    #3FB68B;
+  --warn:       #D29922;
+  --danger:     #F85149;
+  --info:       #58A6FF;
+
+  --border:     rgba(240, 246, 252, 0.08);
+  --border2:    rgba(240, 246, 252, 0.15);
+  --border3:    rgba(240, 246, 252, 0.25);
+
+  --font-sans:  'Sora', sans-serif;
+  --font-mono:  'DM Mono', monospace;
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  20px;
+
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+
+  --topbar-h:   60px;
+  --sidebar-w:  224px;
+  --transition: 0.18s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--dark);
+  color: var(--snow);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--dark4); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--dark5); }
+
+/* ── Selection ── */
+::selection { background: rgba(88, 166, 255, 0.3); color: var(--snow); }
+
+/* ── Links ── */
+a { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.8; }
+
+/* ── Buttons reset ── */
+button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
+
+/* ── Inputs reset ── */
+input, textarea, select {
+  font-family: var(--font-sans);
+  color: var(--snow);
+  background: var(--dark2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition);
+}
+input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+
+/* ── Utility classes ── */
+.mono { font-family: var(--font-mono); }
+.text-mute { color: var(--snow-mute); }
+.text-ghost { color: var(--snow-ghost); }
+.text-accent { color: var(--accent); }
+.text-success { color: var(--success); }
+.text-warn { color: var(--warn); }
+.text-danger { color: var(--danger); }
+
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+
+/* ── Loading skeleton animation ── */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--dark3) 25%, var(--dark4) 50%, var(--dark3) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Page fade-in ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.35s ease both; }
+
+/* ── Score ring animation ── */
+@keyframes ringFill {
+  from { stroke-dashoffset: 314; }
+}
